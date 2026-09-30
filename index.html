@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Matthew Antonio Bulaong | Full Stack Web Developer</title>
+
+  <!-- Graph Meta -->
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            dark: '#1e382b',
+            footer: '#162e22',
+            sage: '#d8e9dc',
+            sageLight: '#e7f2ea',
+            accent: '#346647',
+            badge: '#a8d5b8',
+            badgeText: '#184729',
+            cardBorder: '#e2ede5',
+            darkInput: '#484b49',
+            darkInputBg: '#3f4340'
+          }
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<!-- BEGIN: Custom Styling -->
+<style data-purpose="custom-decorations">
+  .tech-pattern-bg {
+    background-color: #121c24;
+    background-image: radial-gradient(#1f2937 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+  .custom-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #1e382b;
+    border-radius: 4px;
+  }
+</style>
+<!-- END: Custom Styling -->
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased custom-scroll">
+<!-- BEGIN: Navigation -->
+<header class="sticky top-0 z-50 bg-[#1e382b] text-white shadow-md border-b border-[#284938]" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+<!-- Logo / Monogram -->
+<a aria-label="Matthew Antonio Bulaong - Back to Homepage" class="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[#a8d5b8] rounded-md" href="#hero">
+  <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-white text-[#1e382b] font-extrabold flex items-center justify-center text-base sm:text-lg tracking-tight shadow-sm group-hover:bg-[#a8d5b8] transition-colors">
+    MB
+  </div>
+  <span class="font-bold text-base sm:text-lg tracking-tight text-white/95 group-hover:text-white transition-colors truncate max-w-[190px] sm:max-w-none">
+    Matthew Antonio Bulaong
+  </span>
+</a>
+<!-- Mobile Controls (Quick Resume & Hamburger Button) -->
+<div class="flex items-center gap-2 md:hidden">
+  <a aria-label="Get Resume directly" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#a8d5b8]/50 text-[#d8e9dc] hover:bg-[#a8d5b8] hover:text-[#1e382b] transition-all text-xs font-semibold uppercase tracking-wider shadow-sm min-h-[44px]" href="./Matthew_Antonio_RESUME.pdf" target="_blank">
+    <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+      <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    </svg>
+    <span class="hidden sm:inline">Resume</span>
+  </a>
+  <button aria-controls="mobile-navigation" aria-expanded="false" aria-label="Toggle mobile menu" class="p-2 text-white/90 hover:text-white hover:bg-[#183324] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a8d5b8] min-h-[44px] min-w-[44px] flex items-center justify-center" id="mobile-nav-toggle" onclick="const nav = document.getElementById('mobile-navigation'); const isExpanded = this.getAttribute('aria-expanded') === 'true'; this.setAttribute('aria-expanded', !isExpanded); nav.classList.toggle('hidden');">
+    <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    </svg>
+  </button>
+</div>
+<!-- Desktop Navigation Links & Actions -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center gap-7 text-sm font-medium">
+  <a class="text-white hover:text-[#a8d5b8] transition-colors py-2" href="#hero">Home</a>
+  <a class="text-white/80 hover:text-[#a8d5b8] transition-colors py-2" href="#projects">My Projects</a>
+  <a class="text-white/80 hover:text-[#a8d5b8] transition-colors py-2" href="#tools">Tools</a>
+  <a class="text-white/80 hover:text-[#a8d5b8] transition-colors py-2" href="#contact">Contact</a>
+<!-- Highlighted Resume Download Action -->
+<a aria-label="Download or view Matthew Antonio Bulaong Resume" class="ml-2 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#a8d5b8]/50 text-[#d8e9dc] hover:bg-[#a8d5b8] hover:text-[#1e382b] transition-all text-xs font-semibold uppercase tracking-wider shadow-sm min-h-[44px]" href="./Matthew_Antonio_RESUME.pdf" target="_blank">
+  <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+    <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  </svg>
+  Get Resume
+</a>
+</nav>
+</div>
+<!-- Mobile Collapsible Menu Dropdown -->
+<nav aria-label="Mobile Menu Navigation" class="hidden md:hidden bg-[#183324] border-t border-[#284938] px-4 pt-3 pb-5 space-y-2 shadow-lg transition-all" id="mobile-navigation">
+  <a class="block px-3 py-2.5 rounded-lg text-white font-medium hover:bg-[#1e382b] hover:text-[#a8d5b8] transition-colors text-sm min-h-[44px] flex items-center" href="#hero" onclick="document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-navigation').classList.add('hidden');">Home</a>
+  <a class="block px-3 py-2.5 rounded-lg text-white/90 font-medium hover:bg-[#1e382b] hover:text-[#a8d5b8] transition-colors text-sm min-h-[44px] flex items-center" href="#projects" onclick="document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-navigation').classList.add('hidden');">My Projects</a>
+  <a class="block px-3 py-2.5 rounded-lg text-white/90 font-medium hover:bg-[#1e382b] hover:text-[#a8d5b8] transition-colors text-sm min-h-[44px] flex items-center" href="#tools" onclick="document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-navigation').classList.add('hidden');">Tools &amp; Technologies</a>
+  <a class="block px-3 py-2.5 rounded-lg text-white/90 font-medium hover:bg-[#1e382b] hover:text-[#a8d5b8] transition-colors text-sm min-h-[44px] flex items-center" href="#contact" onclick="document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-navigation').classList.add('hidden');">Contact</a>
+  <div class="pt-2 border-t border-[#234633]">
+    <a class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg bg-[#a8d5b8] text-[#1e382b] font-bold text-xs uppercase tracking-wider min-h-[44px]" href="#contact" onclick="document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-navigation').classList.add('hidden');">
+      <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      Get Resume
+    </a>
+  </div>
+</nav>
+</header>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<section aria-labelledby="hero-heading" class="bg-[#d8e9dc] pt-8 pb-12 sm:pt-12 sm:pb-16 lg:py-20 border-b border-[#c8decb]" id="hero">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+<!-- Left Content: Introduction & Actions -->
+<div class="lg:col-span-7 space-y-5 sm:space-y-6">
+<!-- Availability Tag -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#bfddc4] border border-[#a6ceac] text-[10px] sm:text-[11px] font-bold tracking-wider text-[#1e3e29] uppercase" role="status">
+  <span aria-hidden="true" class="w-2 h-2 rounded-full bg-[#207a3c] animate-pulse"></span>
+  AVAILABLE FOR NEW ROLES &amp; PROJECTS
+</div>
+<!-- Headline & Title -->
+<div class="space-y-1.5 sm:space-y-2">
+  <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#173827] tracking-tight leading-tight" id="hero-heading">
+    Matthew Antonio B. Bulaong
+  </h1>
+  <p class="text-xl sm:text-3xl font-bold text-[#2d5f3f] tracking-tight">
+    Full Stack Web Developer
+  </p>
+</div>
+<!-- Bio paragraph -->
+<p class="text-sm sm:text-lg text-[#2a4835] max-w-2xl leading-relaxed">
+  Hey! Computer Engineering graduate here hoping to be an IT professional. Check out my latest projects below.
+</p>
+<p class="text-xs sm:text-base text-[#2f553d] font-medium flex items-center gap-1.5">
+  I try to do my best to create things with love. <span aria-label="heart icon" class="text-red-500">❤️</span>
+</p>
+<!-- Skill Badges -->
+<div aria-label="Core Competencies" class="flex flex-wrap items-center gap-2 sm:gap-3 pt-1 sm:pt-2">
+  <span class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg bg-white/90 border border-[#b2d5bb] text-xs font-bold text-[#1f422b] shadow-sm">
+    <span aria-hidden="true" class="text-[#2c613e] font-mono font-bold">&lt;/&gt;</span> Frontend
+  </span>
+  <span class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg bg-white/90 border border-[#b2d5bb] text-xs font-bold text-[#1f422b] shadow-sm">
+    <span aria-hidden="true" class="text-[#2c613e] font-mono font-bold">{ }</span> Backend
+  </span>
+  <span class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg bg-white/90 border border-[#b2d5bb] text-xs font-bold text-[#1f422b] shadow-sm">
+    <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#2c613e]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+      <path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    </svg>
+    Database
+  </span>
+</div>
+<!-- Hero Buttons (Touch-friendly stacked on mobile, inline on desktop) -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-3 sm:pt-4">
+  <a aria-label="View Projects Section" class="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#1a3827] text-white font-bold text-sm tracking-wide shadow-md hover:bg-[#12271c] hover:shadow-lg transition-all min-h-[48px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a3827]" href="#projects">
+    VIEW PROJECTS ↓
+  </a>
+  <a aria-label="Request Matthew Antonio Bulaong Resume" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border-2 border-[#1a3827] text-[#1a3827] font-bold text-sm tracking-wide hover:bg-[#1a3827] hover:text-white transition-all min-h-[48px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a3827]" href="./Matthew_Antonio_RESUME.pdf" target="_blank">
+    <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+      <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    </svg>
+    GET RESUME ↓
+  </a>
+</div>
+</div>
+<!-- Right Content: Graduation Portrait Card Replica with mobile responsiveness -->
+<div class="lg:col-span-5 flex justify-center order-first lg:order-last">
+  <div aria-label="Illustration of Matthew Antonio Bulaong in Graduation Regalia" class="relative w-full max-w-sm sm:max-w-md bg-white p-2.5 sm:p-3.5 rounded-2xl shadow-xl border border-white/60" role="figure">
+<!-- Framed Photo Container replicating image graduation attire -->
+<div class="relative w-full h-[380px] sm:h-[470px] rounded-xl overflow-hidden bg-gradient-to-b from-[#182329] via-[#0f171e] to-[#080d12] flex items-center justify-center">
+<img src="./images/my_pic.webp" alt="Illustration of Matthew Antonio Bulaong in Graduation Regalia">
+<!-- Location Pill Badge -->
+<div class="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 flex justify-center z-30">
+  <div class="bg-white/95 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-md border border-gray-100 flex items-center justify-between w-full max-w-[300px] sm:max-w-[320px]">
+    <span class="text-[11px] sm:text-xs font-semibold text-gray-700 truncate">
+      Malolos, Bulacan • Remote Available
+    </span>
+    <span aria-label="Location Pin" class="text-xs sm:text-sm">📍</span>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Projects Section -->
+<main aria-labelledby="projects-title" class="py-14 sm:py-20 bg-white" id="projects" role="main">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="mb-8 sm:mb-12">
+  <span class="inline-block px-3 py-1 rounded bg-[#a8d5b8] text-[#143d22] font-extrabold text-xs tracking-wider uppercase mb-3" id="projects-title">
+    PROJECTS
+  </span>
+  <p class="text-gray-600 text-sm font-medium">
+    I like building stuff, here you can check the things I made :)
+  </p>
+</div>
+<!-- Responsive Projects Grid (1 col on mobile, 2 on tablet, 3 on desktop) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Card 1: E-commerce API Documentation -->
+<article aria-labelledby="card-title-1" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-gradient-to-r from-purple-100 via-pink-50 to-orange-50 relative flex items-center justify-center p-4 border-b border-gray-100">
+    <div class="w-full h-full bg-[#a890d3]/30 rounded-lg flex flex-col items-center justify-center p-3 relative overflow-hidden border border-purple-200/60">
+      <span class="px-3 py-1 bg-[#ea580c] text-white font-extrabold rounded-md text-xs shadow-sm uppercase mb-2">API</span>
+      <div class="flex items-center gap-2 sm:gap-3 bg-white/90 px-3 py-1.5 rounded-md shadow-xs">
+        <span class="text-[11px] sm:text-xs font-mono font-semibold text-gray-700">🛒 GET /api/v1/orders</span>
+      </div>
+      <div aria-label="5 stars rating" class="absolute bottom-2 right-2 text-yellow-500 text-xs">⭐⭐⭐⭐⭐</div>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-1">E-commerce API Documentation</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        Dynamic E-Commerce Workflow Management. The system features dynamic routes for order processing, real-time inventory updates, and secure user authentication. It also supports seamless automated order reporting and comprehensive product management. Documented Backend API published publicly using Postman.
+      </p>
+    </div>
+    <a aria-label="View Project: E-commerce API Documentation" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 2: Course Booking API Documentation -->
+<article aria-labelledby="card-title-2" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-gray-50 border-b border-gray-100 relative flex items-center justify-center p-4">
+    <div class="w-full h-full bg-slate-100 rounded-lg border border-slate-200 flex items-center justify-center p-4 relative">
+      <div class="text-left font-sans">
+        <span class="block text-lg sm:text-xl font-extrabold text-slate-800 leading-tight">Flight<br/>Booking<br/><span class="text-sky-600">Api</span></span>
+      </div>
+      <div class="ml-4 sm:ml-6 grid grid-cols-2 gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] text-gray-600 font-medium">
+        <span class="bg-white px-1.5 sm:px-2 py-1 rounded shadow-xs border border-gray-200">🔍 Flight Search</span>
+        <span class="bg-white px-1.5 sm:px-2 py-1 rounded shadow-xs border border-gray-200">⚡ Fast Deploy</span>
+        <span class="bg-white px-1.5 sm:px-2 py-1 rounded shadow-xs border border-gray-200">🎟️ Tickets</span>
+        <span class="bg-white px-1.5 sm:px-2 py-1 rounded shadow-xs border border-gray-200">📅 Real Time</span>
+      </div>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-2">Course Booking API Documentation</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        RESTful API for managing course enrollments, featuring user registration, authentication, and retrieval of user details. Supports course creation, updates, archiving, activation, and student enrollment. Publicly documented using Postman.
+      </p>
+    </div>
+    <a aria-label="View Project: Course Booking API Documentation" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 3: Course Booking App -->
+<article aria-labelledby="card-title-3" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-slate-100 border-b border-gray-100 flex items-center justify-center p-4">
+    <div class="w-full h-full bg-white rounded-lg border border-slate-200 shadow-inner flex overflow-hidden">
+      <div class="w-1/3 bg-[#3f4079] p-2 flex flex-col gap-1.5">
+        <div class="w-5 h-2 bg-white/70 rounded-xs"></div>
+        <div class="w-full h-1.5 bg-white/30 rounded-xs"></div>
+        <div class="w-3/4 h-1.5 bg-white/30 rounded-xs"></div>
+      </div>
+      <div class="w-2/3 p-2.5 bg-slate-50 flex flex-col justify-between">
+        <div class="space-y-1">
+          <div class="h-2 w-16 bg-blue-500 rounded"></div>
+          <div class="text-[9px] font-bold text-gray-700">$5.6K <span class="text-green-600 text-[8px] font-normal">+18%</span></div>
+          <div class="h-10 w-full flex items-end gap-1 pt-2">
+            <div class="w-1/5 h-4 bg-blue-300 rounded-t-xs"></div>
+            <div class="w-1/5 h-7 bg-blue-400 rounded-t-xs"></div>
+            <div class="w-1/5 h-5 bg-blue-300 rounded-t-xs"></div>
+            <div class="w-1/5 h-9 bg-blue-600 rounded-t-xs"></div>
+            <div class="w-1/5 h-6 bg-blue-400 rounded-t-xs"></div>
+          </div>
+        </div>
+        <span class="text-[8px] text-gray-400 font-mono">dashboard.mern.live</span>
+      </div>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-3">Course Booking App</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        A MERN-stack course enrollment system featuring user registration, authentication, and profile management. Authenticated users can create, update, archive, and activate courses. The platform also allows users to browse available courses and enroll seamlessly.
+      </p>
+    </div>
+    <a aria-label="View Project: Course Booking App" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 4: E-commerce App -->
+<article aria-labelledby="card-title-4" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-gradient-to-tr from-sky-100 via-sky-50 to-blue-200 border-b border-gray-100 flex items-center justify-center p-4">
+    <div class="relative w-full h-full flex items-center justify-center">
+      <div class="w-20 sm:w-24 h-32 sm:h-36 bg-white rounded-lg shadow-lg border border-sky-100 p-2 transform -rotate-6">
+        <div class="w-6 h-1.5 bg-sky-500 rounded-full mb-2"></div>
+        <div class="space-y-1">
+          <div class="h-2 w-full bg-slate-100 rounded"></div>
+          <div class="h-2 w-3/4 bg-slate-100 rounded"></div>
+        </div>
+        <div class="mt-3 sm:mt-4 w-full h-10 sm:h-12 bg-sky-50 rounded flex items-center justify-center text-[8px] sm:text-[9px] font-bold text-sky-700">
+          Storefront
+        </div>
+      </div>
+      <div class="w-20 sm:w-24 h-32 sm:h-36 bg-white rounded-lg shadow-xl border border-sky-200 p-2 transform rotate-6 -ml-4">
+        <div class="w-full h-10 sm:h-12 bg-sky-600 rounded text-white text-[8px] flex items-center justify-center font-bold">
+          Checkout
+        </div>
+        <div class="mt-2 text-[7px] sm:text-[8px] text-gray-600 font-mono">Cart: $128.00</div>
+      </div>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-4">E-commerce App</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        MERN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities.
+      </p>
+    </div>
+    <a aria-label="View Project: E-commerce App" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 5: Airline Booking System Mockup -->
+<article aria-labelledby="card-title-5" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-slate-100 border-b border-gray-100 flex items-center justify-center p-4">
+    <div class="w-full h-full bg-white rounded-lg border border-slate-200 p-3 shadow-sm flex flex-col justify-between">
+      <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+        <div class="flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="text-[10px] font-bold text-slate-800">Flyoplan</span>
+        </div>
+        <span class="text-[9px] text-gray-500">LAX → IST</span>
+      </div>
+      <div class="space-y-1 py-1">
+        <div class="flex justify-between text-[9px] bg-slate-50 p-1.5 rounded">
+          <span class="font-medium text-gray-700">08:45 PM</span>
+          <span class="text-emerald-700 font-bold">$583</span>
+        </div>
+        <div class="flex justify-between text-[9px] bg-emerald-50 p-1.5 rounded border border-emerald-100">
+          <span class="font-medium text-emerald-900">04:15 PM</span>
+          <span class="text-emerald-700 font-bold">$600</span>
+        </div>
+      </div>
+      <div class="text-[9px] font-bold text-right text-gray-600">Total: $1,183</div>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-5">Airline Booking System Mockup</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        Side Project: Conceptual design showcasing an intuitive UI for flight search, seat selection, and booking confirmation, focusing on user experience and workflow efficiency.
+      </p>
+    </div>
+    <a aria-label="View Project: Airline Booking System Mockup" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 6: Airline Booking System Prototype -->
+<article aria-labelledby="card-title-6" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-slate-50 border-b border-gray-100 flex items-center justify-center p-4">
+    <div class="w-full h-full bg-white rounded-lg border border-slate-300 p-2.5 shadow-sm flex flex-col">
+      <div class="flex items-center justify-between border-b pb-1.5">
+        <div class="flex items-center gap-1.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-slate-800"></div>
+          <span class="text-[10px] font-bold text-slate-800">TECHLINE</span>
+        </div>
+        <div class="flex gap-1">
+          <span class="w-8 h-1.5 bg-slate-200 rounded"></span>
+          <span class="w-8 h-1.5 bg-slate-200 rounded"></span>
+        </div>
+      </div>
+      <div class="mt-2 grid grid-cols-7 gap-1 text-[8px] text-center font-mono text-gray-500">
+        <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+        <div class="col-span-7 h-10 bg-slate-100 rounded flex items-center justify-center text-[10px] font-sans font-semibold text-slate-700">
+          Seat Matrix • Active
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-6">Airline Booking System Prototype</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        Side Project: Interactive prototype simulating end-to-end airline booking functionalities, including flight search, reservation, payment processing, and real-time ticket management.
+      </p>
+    </div>
+    <a aria-label="View Project: Airline Booking System Prototype" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 7: Short Courses Capstone 1 -->
+<article aria-labelledby="card-title-7" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-[#0e161c] border-b border-gray-100 p-4 flex flex-col justify-around">
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-cyan-400 font-mono">© C</span>
+      <span class="text-yellow-400 font-mono">Python</span>
+      <span class="text-yellow-300 font-mono">JS</span>
+      <span class="text-red-400 font-mono">Java</span>
+      <span class="text-red-500 font-mono">Ruby</span>
+      <span class="text-blue-400 font-mono">Lua</span>
+    </div>
+    <div class="flex justify-between items-center text-xs font-bold opacity-90">
+      <span class="text-red-400 font-mono">Scala</span>
+      <span class="text-purple-400 font-mono">Kotlin</span>
+      <span class="text-indigo-400 font-mono">PHP</span>
+      <span class="text-orange-400 font-mono">Swift</span>
+      <span class="text-blue-500 font-mono">Go</span>
+    </div>
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-yellow-300 font-mono">JS</span>
+      <span class="text-red-400 font-mono">Java</span>
+      <span class="text-red-500 font-mono">Ruby</span>
+      <span class="text-blue-400 font-mono">Lua</span>
+      <span class="text-cyan-400 font-mono">Docker</span>
+      <span class="text-yellow-400 font-mono">Python</span>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-7">Short Courses Capstone - Backend</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        Various backend and algorithmic applications made using Java, PHP, Python, and C.
+      </p>
+    </div>
+    <a aria-label="View Project: Short Courses Capstone - Backend" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 8: Short Courses Capstone 2 -->
+<article aria-labelledby="card-title-8" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-[#0e161c] border-b border-gray-100 p-4 flex flex-col justify-around">
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-cyan-400 font-mono">© C</span>
+      <span class="text-yellow-400 font-mono">Python</span>
+      <span class="text-yellow-300 font-mono">JS</span>
+      <span class="text-red-400 font-mono">Java</span>
+      <span class="text-red-500 font-mono">Ruby</span>
+      <span class="text-blue-400 font-mono">Lua</span>
+    </div>
+    <div class="flex justify-between items-center text-xs font-bold opacity-90">
+      <span class="text-red-400 font-mono">Scala</span>
+      <span class="text-purple-400 font-mono">Kotlin</span>
+      <span class="text-indigo-400 font-mono">PHP</span>
+      <span class="text-orange-400 font-mono">Swift</span>
+      <span class="text-blue-500 font-mono">Go</span>
+    </div>
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-yellow-300 font-mono">JS</span>
+      <span class="text-red-400 font-mono">Java</span>
+      <span class="text-red-500 font-mono">Ruby</span>
+      <span class="text-blue-400 font-mono">Lua</span>
+      <span class="text-cyan-400 font-mono">Docker</span>
+      <span class="text-yellow-400 font-mono">Python</span>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-8">Short Courses Capstone - Mobile</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        Cross-platform mobile and web applications developed with Swift, Kotlin, and modern JavaScript.
+      </p>
+    </div>
+    <a aria-label="View Project: Short Courses Capstone - Mobile" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+<!-- Card 9: Short Courses Capstone 3 -->
+<article aria-labelledby="card-title-9" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+  <div class="h-44 sm:h-48 bg-[#0e161c] border-b border-gray-100 p-4 flex flex-col justify-around">
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-cyan-400 font-mono">© C</span>
+      <span class="text-yellow-400 font-mono">Python</span>
+      <span class="text-yellow-300 font-mono">JS</span>
+      <span class="text-red-400 font-mono">Java</span>
+      <span class="text-red-500 font-mono">Ruby</span>
+      <span class="text-blue-400 font-mono">Lua</span>
+    </div>
+    <div class="flex justify-between items-center text-xs font-bold opacity-90">
+      <span class="text-red-400 font-mono">Scala</span>
+      <span class="text-purple-400 font-mono">Kotlin</span>
+      <span class="text-indigo-400 font-mono">PHP</span>
+      <span class="text-orange-400 font-mono">Swift</span>
+      <span class="text-blue-500 font-mono">Go</span>
+    </div>
+    <div class="flex justify-between items-center text-xs font-bold">
+      <span class="text-yellow-300 font-mono">JS</span>
+      <span class="text-red-400 font-mono">Java</span>
+      <span class="text-red-500 font-mono">Ruby</span>
+      <span class="text-blue-400 font-mono">Lua</span>
+      <span class="text-cyan-400 font-mono">Docker</span>
+      <span class="text-yellow-400 font-mono">Python</span>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-gray-900 text-base mb-2" id="card-title-9">Short Courses Capstone - DevOps</h3>
+      <p class="text-xs text-gray-600 leading-relaxed mb-4">
+        Microservice containerization and container orchestration exercises completed with Docker &amp; Go.
+      </p>
+    </div>
+    <a aria-label="View Project: Short Courses Capstone - DevOps" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1e382b] hover:text-[#2d5f3f] transition-colors pt-2 min-h-[44px]" href="#contact">
+      View Project <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+</div>
+</div>
+</main>
+<!-- END: Projects Section -->
+<!-- BEGIN: Tools & Technologies Section -->
+<section aria-labelledby="tools-heading" class="py-20 bg-gray-50/80 border-t border-gray-200" id="tools">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<!-- Section Title & Badge -->
+<div class="max-w-3xl mx-auto mb-14">
+  <span class="inline-block px-3.5 py-1 rounded bg-[#a8d5b8] text-[#143d22] font-extrabold text-xs tracking-wider uppercase mb-3.5">
+    TOOLS &amp; TECHNOLOGIES
+  </span>
+  <h2 class="text-3xl sm:text-4xl font-extrabold text-[#112419] tracking-tight" id="tools-heading">
+    Developer Toolkit
+  </h2>
+  <p class="mt-3 text-sm text-gray-600 font-normal">
+    The core technologies, frameworks, and developer tools that I use for powering modern web applications.
+  </p>
+</div>
+<!-- 6x2 Grid of Tech Stack Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Tool 1: VS Code -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewbox="0 0 24 24">
+      <path d="M17.583 2.148l-8.79 8.016-4.57-3.473L2 8.077v7.846l2.223 1.386 4.57-3.473 8.79 8.016 4.417-2.12V4.268l-4.417-2.12zm0 3.731v12.242l-6.852-6.121 6.852-6.121z"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">VS Code</span>
+  <span class="text-[11px] text-gray-500 mt-1">Editor &amp; IDE</span>
+</div>
+<!-- Tool 2: React -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+      <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(0 12 12)"></ellipse>
+      <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"></ellipse>
+      <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"></ellipse>
+      <circle cx="12" cy="12" fill="currentColor" r="1.5"></circle>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">React</span>
+  <span class="text-[11px] text-gray-500 mt-1">UI Library</span>
+</div>
+<!-- Tool 3: JavaScript -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <div class="w-9 h-9 bg-yellow-400 rounded text-black font-extrabold flex items-center justify-center text-sm">
+      JS
+    </div>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">JavaScript</span>
+  <span class="text-[11px] text-gray-500 mt-1">Web Core</span>
+</div>
+<!-- Tool 4: Tailwind CSS -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-cyan-500" fill="currentColor" viewbox="0 0 24 24">
+      <path d="M12 6c-2.4 0-3.9 1.2-4.5 3.6.9-1.2 2-1.6 3.3-1.2 1 .3 1.7 1.1 2.5 1.9C14.6 11.6 16.2 13 20 13c2.4 0 3.9-1.2 4.5-3.6-.9 1.2-2 1.6-3.3 1.2-1-.3-1.7-1.1-2.5-1.9C17.4 7.4 15.8 6 12 6zm-8 7c-2.4 0-3.9 1.2-4.5 3.6.9-1.2 2-1.6 3.3-1.2 1 .3 1.7 1.1 2.5 1.9C6.6 18.6 8.2 20 12 20c2.4 0 3.9-1.2 4.5-3.6-.9 1.2-2 1.6-3.3 1.2-1-.3-1.7-1.1-2.5-1.9C9.4 14.4 7.8 13 4 13z"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Tailwind CSS</span>
+  <span class="text-[11px] text-gray-500 mt-1">Utility Styling</span>
+</div>
+<!-- Tool 5: Git -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewbox="0 0 24 24">
+      <path d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0l-2 2 3.1 3.1c.6-.2 1.3-.1 1.8.4.5.5.6 1.3.4 1.8l3 3c.6-.2 1.3-.1 1.8.4.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0-.6-.6-.7-1.4-.4-2.1l-2.8-2.8v4.9c.2.2.4.6.4.9 0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5c0-.4.2-.7.4-.9v-5.2c-.3-.2-.4-.5-.4-.9 0-.6.4-1.2 1-1.4l-3-3-5.5 5.5c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.5-8.5c.6-.6.6-1.6 0-2.2z"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Git</span>
+  <span class="text-[11px] text-gray-500 mt-1">Version Control</span>
+</div>
+<!-- Tool 6: Docker -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewbox="0 0 24 24">
+      <path d="M22.5 10.5c-.3-.1-1.3-.2-2.3.4-.6-.7-1.5-1.1-2.4-1.1-.3 0-.6 0-.8.1-.4-1.7-1.9-3-3.7-3h-.6c-.2-.7-.8-1.2-1.6-1.2H7.2c-.9 0-1.6.7-1.6 1.6v2.1c-.8.1-1.5.8-1.5 1.6V12c-2.3.3-4.1 2.2-4.1 4.6 0 2.5 2 4.6 4.5 4.6 6.3 0 11.2-2.8 14-8.4 1.4.1 2.8-.4 3.7-1.4.4-.3.6-.6.3-.9zm-13.6-2h1.6v1.6H8.9V8.5zm2.1 0h1.6v1.6H11V8.5zm-4.2 0h1.6v1.6H6.8V8.5zm0 2.1h1.6v1.6H6.8v-1.6zm2.1 0h1.6v1.6H8.9v-1.6zm2.1 0h1.6v1.6H11v-1.6zm2.1 0h1.6v1.6h-1.6v-1.6zm2.1 0h1.6v1.6h-1.6v-1.6z"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Docker</span>
+  <span class="text-[11px] text-gray-500 mt-1">Containers</span>
+</div>
+<!-- Tool 7: Figma -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-7 h-7" fill="none" viewbox="0 0 38 57">
+      <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"></path>
+      <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"></path>
+      <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"></path>
+      <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"></path>
+      <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Figma</span>
+  <span class="text-[11px] text-gray-500 mt-1">UI Designing</span>
+</div>
+<!-- Tool 8: Bootstrap 5 -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <div class="w-9 h-9 bg-purple-700 text-white rounded-lg flex items-center justify-center font-extrabold text-lg">
+      B
+    </div>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Bootstrap 5</span>
+  <span class="text-[11px] text-gray-500 mt-1">Component UI</span>
+</div>
+<!-- Tool 9: MongoDB -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <span class="font-black text-gray-800 tracking-tighter text-sm">MDB</span>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">MongoDB</span>
+  <span class="text-[11px] text-gray-500 mt-1">No Relational Database</span>
+</div>
+<!-- Tool 10: MySQL -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-sky-800" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">MySQL</span>
+  <span class="text-[11px] text-gray-500 mt-1">Relational Database</span>
+</div>
+<!-- Tool 11: Node.js -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <span class="font-bold text-emerald-700 tracking-tight text-sm">node</span>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Node.js</span>
+  <span class="text-[11px] text-gray-500 mt-1">JavaScript Runtime</span>
+</div>
+<!-- Tool 12: Vue.js -->
+<div class="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs hover:shadow-md hover:border-[#a8d5b8] transition-all flex flex-col items-center text-center">
+  <div class="w-12 h-12 flex items-center justify-center mb-3">
+    <svg class="w-8 h-8 text-emerald-500" fill="currentColor" viewbox="0 0 24 24">
+      <path d="M2 3h3.5L12 14.2 18.5 3H22L12 21 2 3zm4.5 0h3L12 7.5 14.5 3h3L12 12.5 6.5 3z"></path>
+    </svg>
+  </div>
+  <span class="font-bold text-gray-900 text-xs">Vue.js</span>
+  <span class="text-[11px] text-gray-500 mt-1">JavaScript Framework</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Tools & Technologies Section -->
+<!-- BEGIN: Contact Section -->
+<section aria-labelledby="contact-heading" class="py-14 sm:py-20 bg-[#d8e9dc] border-t border-[#c8decb]" id="contact">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center mb-8 sm:mb-10">
+  <span class="inline-block px-3.5 py-1 rounded bg-[#a8d5b8] text-[#143d22] font-extrabold text-xs tracking-wider uppercase mb-3.5">
+    CONTACT
+  </span>
+  <h2 class="text-2xl sm:text-3xl font-extrabold text-[#112419] tracking-tight mb-2" id="contact-heading">
+    Get In Touch
+  </h2>
+  <p class="text-sm sm:text-base text-[#254631] font-medium max-w-xl mx-auto">
+    Got a project in mind or just want to chat about web development? Send me a message below and I'll get back to you as soon as I can.
+  </p>
+</div>
+<!-- Contact Form Container with mobile touch-friendly inputs -->
+<div class="bg-transparent">
+  <form aria-label="Send a message to Matthew Antonio Bulaong" class="space-y-5 sm:space-y-6" onsubmit="event.preventDefault(); alert('Message sent successfully! Matt will reach back soon.');">
+<!-- Name Field -->
+<div>
+  <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-2" for="name">
+    YOUR NAME <span aria-hidden="true" class="text-red-500">*</span>
+  </label>
+  <input aria-required="true" autocomplete="name" class="w-full px-4 py-3.5 rounded-md bg-[#434644] text-white placeholder-gray-400 border border-[#525654] focus:outline-none focus:ring-2 focus:ring-[#1e382b] text-sm font-medium min-h-[48px]" id="name" name="name" placeholder="e.g. Matt Bulaong" required="" type="text"/>
+</div>
+<!-- Email Field -->
+<div>
+  <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-2" for="email">
+    EMAIL ADDRESS <span aria-hidden="true" class="text-red-500">*</span>
+  </label>
+  <input aria-required="true" autocomplete="email" class="w-full px-4 py-3.5 rounded-md bg-[#434644] text-white placeholder-gray-400 border border-[#525654] focus:outline-none focus:ring-2 focus:ring-[#1e382b] text-sm font-medium min-h-[48px]" id="email" name="email" placeholder="matt@example.com" required="" type="email"/>
+</div>
+<!-- Message Field -->
+<div>
+  <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-2" for="message">
+    PROJECT DETAILS / MESSAGE <span aria-hidden="true" class="text-red-500">*</span>
+  </label>
+  <textarea aria-required="true" class="w-full px-4 py-3.5 rounded-md bg-[#434644] text-white placeholder-gray-400 border border-[#525654] focus:outline-none focus:ring-2 focus:ring-[#1e382b] text-sm font-medium resize-none" id="message" name="message" placeholder="Tell me about your timeline, scope, and objectives..." required="" rows="5"></textarea>
+</div>
+<!-- Form Actions & Direct Email Info -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
+  <button aria-label="Submit contact form to Matthew Antonio Bulaong" class="w-full sm:w-auto px-8 py-3.5 bg-[#b9c9bc] hover:bg-[#a6bbaa] text-gray-900 font-extrabold text-xs tracking-wider uppercase rounded-md shadow-sm transition-all focus:ring-2 focus:ring-offset-2 focus:ring-[#1e382b] min-h-[48px] flex items-center justify-center" type="submit">
+    CONTACT ME
+  </button>
+  <div class="text-xs text-[#284934] font-medium text-center sm:text-right">
+    Direct email: <a aria-label="Send direct email to matthew.bulaong@design.io" class="font-bold text-[#143220] hover:underline p-1 inline-block focus:outline-none focus:ring-2 focus:ring-[#1e382b] rounded" href="mailto:matthew.bulaong@design.io">matthew.bulaong@design.io</a>
+  </div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- END: Contact Section -->
+<!-- BEGIN: Footer -->
+<footer class="bg-[#183324] text-white/90 border-t border-[#234633] py-6 text-xs" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+<!-- Copyright text with green bar decoration -->
+<div class="flex items-center gap-3">
+  <span aria-hidden="true" class="w-10 h-1 bg-[#4caf50] rounded-full hidden sm:inline-block"></span>
+  <p class="text-white/80 font-normal">
+    © 2026 Matthew Antonio Bulaong. All Rights Reserved.
+  </p>
+</div>
+<!-- Social Links & Back to Top with touch-friendly 44px targets -->
+<div class="flex items-center gap-4 sm:gap-5 font-semibold text-white/90">
+<!-- GitHub Icon -->
+<a aria-label="Matthew Antonio Bulaong on GitHub (opens in new tab)" class="hover:text-[#a8d5b8] transition-colors p-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a8d5b8] min-h-[44px] min-w-[44px] flex items-center justify-center" href="https://github.com" rel="noopener noreferrer" target="_blank">
+  <svg aria-hidden="true" class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+  </svg>
+</a>
+<!-- LinkedIn Icon -->
+<a aria-label="Matthew Antonio Bulaong on LinkedIn (opens in new tab)" class="hover:text-[#a8d5b8] transition-colors p-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a8d5b8] min-h-[44px] min-w-[44px] flex items-center justify-center" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+  <svg aria-hidden="true" class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+  </svg>
+</a>
+<!-- Back to Top Smooth Scroll Link -->
+<a aria-label="Scroll back to top of page" class="hover:text-[#a8d5b8] uppercase tracking-wider flex items-center gap-1 transition-colors px-2 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a8d5b8] min-h-[44px]" href="#hero">
+  BACK TO TOP ↑
+</a>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
